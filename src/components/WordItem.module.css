@@ -1,0 +1,15 @@
+.wordPair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 60px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.activePair {
+  background-color: #8dd464;
+}
