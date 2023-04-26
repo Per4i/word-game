@@ -1,15 +1,32 @@
-.wordPair {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  width: 200px;
-  height: 60px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.activePair {
-  background-color: #8dd464;
-}
+.list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .wordCSS {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e1f5fe;
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .selected {
+    background-color: #aedef5;
+    color: #000000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+  }
+  .wordCSS:hover {
+    background-color: #aedef5;
+  }

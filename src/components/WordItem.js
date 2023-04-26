@@ -1,20 +1,8 @@
-import { useState } from "react";
-import styles from "./WordItem.module.css";
-
+import React from 'react';
 const WordItem = (props) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleClick = () => {
-    setIsActive(!isActive);
-    props.handleClick();
-  };
-
   return (
-    <button
-      className={`${styles.wordPair} ${isActive ? styles.activePair : ""}`}
-      onClick={handleClick}
-    >
-      <div className={styles.word}>{props.word}</div>
+    <button className={props.className} onClick={props.handleClick}>
+      <div>{props.word}</div>
     </button>
   );
 };
