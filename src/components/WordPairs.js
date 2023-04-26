@@ -45,8 +45,8 @@ const WordPairs = (props) => {
   return (
     <div>
     <div className = {styles.container}>
-        <RusWords className = {styles.column} russianWords={russianWords} handleRussianWordClick={handleRussianWordClick} selectedRussianWord = {selectedRussianWord} />
-        <EnglishWords className = {styles.column} englishWords={englishWords} handleEnglishWordClick={handleEnglishWordClick} selectedEnglishWord = {selectedEnglishWord} />
+        <RusWords russianWords={russianWords} handleRussianWordClick={handleRussianWordClick} selectedRussianWord = {selectedRussianWord} />
+        <EnglishWords englishWords={englishWords} handleEnglishWordClick={handleEnglishWordClick} selectedEnglishWord = {selectedEnglishWord} />
     </div>
       <div className= {styles['guess-counter']}>
         {guessCounter > 0 && <p>Количество угаданных пар: {guessCounter}</p>}
