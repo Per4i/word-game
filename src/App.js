@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div>
-      <WordPairs matchedPairs={matchedPairs} />
+      <WordPairs matchedPairs={matchedPairs}/>
     </div>
   );
 };
