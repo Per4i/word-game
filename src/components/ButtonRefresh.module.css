@@ -1,0 +1,22 @@
+.button {
+    background-color: #4fe062;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center; 
+    font-weight: bold; 
+  }
+  
+  .button:hover {
+    background-color: #43e98e;
+  }
+  .text {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+  }
+  

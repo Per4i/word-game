@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import EnglishWords from './EnglishWords';
 import RusWords from './RussianWords';
 import styles from './WordPairs.module.css'
+import ButtonRefresh from './ButtonRefresh';
+
 
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -25,14 +27,14 @@ const WordPairs = (props) => {
       pair => pair.rus === selectedRussianWord && pair.eng === selectedEnglishWord
     );
     if (matchingPair) {
-      setGuessCounter(guessCounter + 1);
+      setGuessCounter(prevCounter => prevCounter + 1);
       setSelectedRussianWord('');
       setSelectedEnglishWord('');
       setMatchedPairs(matchedPairs.filter(
         pair => pair.rus !== selectedRussianWord && pair.eng !== selectedEnglishWord
       ));
     } 
-  }, [selectedRussianWord, selectedEnglishWord, matchedPairs]);
+  }, [selectedRussianWord, selectedEnglishWord, matchedPairs, setGuessCounter]);
   
   const handleRussianWordClick = (word) => {
     setSelectedRussianWord(word);
@@ -44,13 +46,17 @@ const WordPairs = (props) => {
   
   return (
     <div>
-    <div className = {styles.container}>
-        <RusWords russianWords={russianWords} handleRussianWordClick={handleRussianWordClick} selectedRussianWord = {selectedRussianWord} />
-        <EnglishWords englishWords={englishWords} handleEnglishWordClick={handleEnglishWordClick} selectedEnglishWord = {selectedEnglishWord} />
-    </div>
-      <div className= {styles['guess-counter']}>
-        {guessCounter > 0 && <p>Количество угаданных пар: {guessCounter}</p>}
-      </div>
+      <div className = {styles.container}>
+          <RusWords russianWords={russianWords} handleRussianWordClick={handleRussianWordClick} selectedRussianWord = {selectedRussianWord} />
+          <EnglishWords englishWords={englishWords} handleEnglishWordClick={handleEnglishWordClick} selectedEnglishWord = {selectedEnglishWord} />
+          </div>
+          <div className= {styles.container2}>
+            <div className= {styles['guess-counter']}>
+              {guessCounter > 0 && <p>Количество угаданных пар: {guessCounter}</p>}
+            </div>
+            <ButtonRefresh/>
+          </div> 
+      
     </div>
   );
 };
